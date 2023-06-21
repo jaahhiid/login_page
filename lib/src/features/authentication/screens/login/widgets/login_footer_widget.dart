@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../signup/signup_screen.dart';
+
 class LoginFooter extends StatelessWidget {
   const LoginFooter({
     super.key,
@@ -17,13 +19,15 @@ class LoginFooter extends StatelessWidget {
           child: OutlinedButton.icon(
               onPressed: () {},
               icon: const Image(
-                  image: AssetImage('assets/logo/google.png'),
-                  width: 20.0),
+                  image: AssetImage('assets/logo/google.png'), width: 20.0),
               label: const Text('Sign-in-with Google')),
         ),
         const SizedBox(height: 10),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SignUpScreen()));
+          },
           child: Text.rich(
             TextSpan(
               text: 'Don\'t have an Account? ',

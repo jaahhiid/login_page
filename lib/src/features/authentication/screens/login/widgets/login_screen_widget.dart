@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/src/features/authentication/screens/forget_passowd/forget_password_options/forget_password_model_bottom_sheet.dart';
+import 'package:login_page/src/features/core/screens/dashboard/dashboard.dart';
 
 class FormNewWidget extends StatelessWidget {
   const FormNewWidget({
@@ -47,7 +48,13 @@ class FormNewWidget extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: const Text('Login'))),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const DashBoard()));
+                    },
+                    child: const Text('Login'))),
           ],
         ),
       ),
